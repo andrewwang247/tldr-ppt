@@ -1,22 +1,24 @@
 from pptx import Presentation
 
-prs = Presentation("test.pptx")
-slide_list = []
+def returnText(fileName):
 
-for slide in prs.slides:
-	elements = []
-	for shape in slide.shapes:
-		if shape.has_text_frame:
-			for para in shape.text_frame.paragraphs:
-				if para.text == "":
-					continue
-				elif shape.is_placeholder:
-					elements.append( ( True, shape.placeholder_format.type, para.text ) )
-				else:
-					elements.append( ( False, shape.shape_type, para.text) )
-	if len(elements) != 0:
-		slide_list.append(elements)
-print(slide_list)
+	prs = Presentation(fileName)
+	slide_list = []
+
+	for slide in prs.slides:
+		elements = []
+		for shape in slide.shapes:
+			if shape.has_text_frame:
+				for para in shape.text_frame.paragraphs:
+					if para.text == "":
+						continue
+					elif shape.is_placeholder:
+						elements.append( ( True, shape.placeholder_format.type, para.text ) )
+					else:
+						elements.append( ( False, shape.shape_type, para.text) )
+		if len(elements) != 0:
+			slide_list.append(elements)
+	return slide_list
             
 # for slide in prs.slides:
 #     for shape in slide.shapes:
