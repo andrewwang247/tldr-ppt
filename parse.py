@@ -1,6 +1,4 @@
 from pptx import Presentation
-from pptx.enum.shapes import PP_PLACEHOLDER
-from pptx.enum.shapes import MSO_SHAPE_TYPE
 
 prs = Presentation("C:/Users/siwei/Downloads/test.pptx")
 slide_list = []
