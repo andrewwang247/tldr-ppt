@@ -28,17 +28,6 @@ print(slide_list)
 #             file_path=image.filename
 #             print(file_path)
 
-for slide in prs.slides:
-	elements = []
-	for shape in slide.shapes:
-		if shape.has_text_frame:
-			for para in shape.text_frame.paragraphs:
-				if shape.is_placeholder:
-					elements.append( ( True, shape.placeholder_format.type, para.text ) )
-				else:
-					elements.append( ( False, shape.shape_type, para.text) )
-	if len(elements) != 0:
-		slide_list.append(elements)
 
 # for shape in slide.shapes:
 #     if shape.shape_type != MSO_SHAPE_TYPE:
