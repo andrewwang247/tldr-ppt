@@ -1,4 +1,5 @@
-from pptx import python-pptx
+
+from pptx import Presentation
 from pptx.enum.shapes import MSO_SHAPE_TYPE
 
 prs = Presentation("C:/Users/siwei/Downloads/test.pptx")
