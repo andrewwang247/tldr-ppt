@@ -1,6 +1,6 @@
 from pptx import Presentation
 
-prs = Presentation("C:/Users/siwei/Downloads/test.pptx")
+prs = Presentation("test.pptx")
 slide_list = []
 
 for slide in prs.slides:
